@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>send_tovar</title>
+</head>
+
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+
+<h2>Send Tovar</h2>
+
+<div th:if="${errorMessage!=null}"
+     style="color:#ff0000;font-style:italic" th:utext="${errorMessage}">..</div>
+
+<form th:action="@{/send_tovar}" th:object="${form_page}" method="POST">
+    <table>
+
+        <tr>
+            <td>Name</td>
+            <td><input type="text" th:field="*{fromAccountId}"/></td>
+        </tr>
+        <tr>
+            <td>description</td>
+            <td><input type="text" th:field="*{toAccountId}"/></td>
+        </tr>
+        <tr>
+            <td>create_date</td>
+            <td><input type="text" th:field="*{amount}" /></td>
+        </tr>
+        <tr>
+            <td>place_storage</td>
+            <td><input type="text" th:field="*{toAccountId}"/></td>
+        </tr>
+        <tr>
+            <td>reserved</td>
+            <td><input type="checkbox" name="option2" value="a2"/></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Send"/></td>
+        </tr>
+
+    </table>
+</form>
+
+</body>
+</html>

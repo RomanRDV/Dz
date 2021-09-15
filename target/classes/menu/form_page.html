@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>form_page</title>
+
+    <style>
+        th, td {
+            padding: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+
+<h2>FORM</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>description</th>
+        <th>create_date</th>
+        <th>place_storage</th>
+        <th>reserved</th>
+    </tr>
+    <tr th:each="accountInfo : ${accountInfos}">
+        <td th:utext="${accountInfo.id}">..</td>
+        <td th:utext="${accountInfo.Name}">..</td>
+        <td th:utext="${accountInfo.description}">..</td>
+        <td th:utext="${accountInfo.create_date}">..</td>
+        <td th:utext="${accountInfo.place_storage}">..</td>
+        <td th:utext="${accountInfo.reserved}">..</td>
+    </tr>
+
+</table>
+</body>
+</html>
